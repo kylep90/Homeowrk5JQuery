@@ -1,79 +1,161 @@
-
-
-
 //Displays the time
 var current = moment().format('dddd Do MMMM YYYY');
 $("#currentDay").text(current)
 
-//Saves the hour in the local storage
-var currentHour = moment().startOf('day').fromNow();
-console.log(currentHour) 
-var currentTimeSaved = localStorage.setItem("Current Time", currentHour)
+// //Saves the hour in the local storage
+// var currentHour = moment().startOf('day').fromNow();
+// console.log(currentHour) 
+// var currentTimeSaved = localStorage.setItem("Current Time", currentHour)
 
-var HoursFrom9 = moment("9", "h").fromNow(); console.log(HoursFrom9)
-var HoursFrom10 = moment("10", "h").fromNow(); console.log(HoursFrom10)
-var HoursFrom11 = moment("11", "h").fromNow(); console.log(HoursFrom11)
-var HoursFrom12 = moment("12", "h").fromNow(); console.log(HoursFrom12)
-var HoursFrom13 = moment("13", "h").fromNow(); console.log(HoursFrom13)
-var HoursFrom14 = moment("14", "h").fromNow(); console.log(HoursFrom14)
-var HoursFrom15 = moment("15", "h").fromNow(); console.log(HoursFrom15)
-var HoursFrom16 = moment("16", "h").fromNow(); console.log(HoursFrom16)
-var HoursFrom17 = moment("17", "h").fromNow(); console.log(HoursFrom17)
-var HoursFrom18 = moment("18", "h").fromNow(); console.log(HoursFrom18)
-var HoursFrom19 = moment("19", "h").fromNow(); console.log(HoursFrom19)
-var HoursFrom20 = moment("20", "h").fromNow(); console.log(HoursFrom20)
+//Takes the hour in the 24 hour clock
+var now = moment().format('H')
 
-console.log(current - HoursFrom9);
-//Check for 9AM
-if (HoursFrom9.indexOf("ago") >= 0) { 
-    console.log("Past");
-   $("#9").attr("class", "past") 
+//Decides whether time is in the past, present or furture by creating and setting the variable to a certain hour and
+//subtratcing it from the current hour.
+
+//9AM
+var HourAt9 = "9"
+if (now - HourAt9 > 0) {
+    console.log("past")
+    $("#9").attr("class", "past")
 }
-
-else if(HoursFrom9.indexOf("in") >= 0) {
-    console.log("Future");
+else if(now - HourAt9 < 0) {
+    console.log("future")
     $("#9").attr("class", "future")
 }
-if(HoursFrom9.indexOf("minute") >= 0) {
-    console.log("Present")
-    $("#9").attr("class", "present")
-
+else {
+    console.log("present")
+    $("#9").attr("class", "present")  
 }
 
-
-//For 10AM
-if (HoursFrom18.indexOf("ago") >= 0) { 
-    console.log("Past");
-   $("#10").attr("class", "past") 
+//10AM
+var HourAt10 = "10"
+if (now - HourAt10 > 0) {
+    $("#10").attr("class", "past")
 }
-
-else if(HoursFrom18.indexOf("in") >= 0) {
-    console.log("Future");
+else if(now - HourAt10 < 0) {
     $("#10").attr("class", "future")
 }
-if(HoursFrom18.indexOf("minute") >= 0) {
-    console.log("Present")
-    $("#10").attr("class", "present")
-
+else {
+    $("#10").attr("class", "present")  
 }
 
-//For 11AM
-if (HoursFrom20.indexOf("ago") >= 0) { 
-    console.log("Past");
-   $("#11").attr("class", "past") 
+//11AM
+var HourAt11 = "11"
+if (now - HourAt11 > 0) {
+    $("#11").attr("class", "past")
 }
-
-else if(HoursFrom20.indexOf("in") >= 0) {
-    console.log("Future");
+else if(now - HourAt11 < 0) {
     $("#11").attr("class", "future")
 }
-if(HoursFrom20.indexOf("minute") >= 0) {
-    console.log("Present")
-    $("#11").attr("class", "present")
-
+else {
+    $("#11").attr("class", "present")  
 }
 
+//12PM
+var HourAt12 = "12"
+if (now - HourAt12 > 0) {
+    $("#12").attr("class", "past")
+}
+else if(now - HourAt12 < 0) {
+    $("#12").attr("class", "future")
+}
+else {
+    $("#12").attr("class", "present")  
+}
 
+//1PM
+var HourAt13 = "13"
+if (now - HourAt13 > 0) {
+    $("#13").attr("class", "past")
+}
+else if(now - HourAt1 < 0) {
+    $("#13").attr("class", "future")
+}
+else {
+    $("#13").attr("class", "present")  
+}
+
+//2PM
+var HourAt14 = "14"
+if (now - HourAt14 > 0) {
+    $("#14").attr("class", "past")
+}
+else if(now - HourAt14 < 0) {
+    $("#14").attr("class", "future")
+}
+else {
+    $("#14").attr("class", "present")  
+}
+
+//3PM
+var HourAt15 = "15"
+if (now - HourAt15 > 0) {
+    $("#15").attr("class", "past")
+}
+else if(now - HourAt15 < 0) {
+    $("#15").attr("class", "future")
+}
+else {
+    $("#15").attr("class", "present")  
+}
+
+//4PM
+var HourAt16 = "16"
+if (now - HourAt16 > 0) {
+    $("#16").attr("class", "past")
+}
+else if(now - HourAt16 < 0) {
+    $("#16").attr("class", "future")
+}
+else {
+    $("#16").attr("class", "present")  
+}
+
+//5PM
+var HourAt17 = "17"
+if (now - HourAt17 > 0) {
+    console.log("past")
+    $("#17").attr("class", "past")
+}
+else if(now - HourAt17 < 0) {
+    console.log("future")
+    $("#17").attr("class", "future")
+}
+else {
+    console.log("present")
+    $("#17").attr("class", "present")  
+}
+
+//6PM
+var HourAt18 = "18"
+if (now - HourAt18 > 0) {
+    console.log("past")
+    $("#18").attr("class", "past")
+}
+else if(now - HourAt18 < 0) {
+    console.log("future")
+    $("#18").attr("class", "future")
+}
+else {
+    console.log("present")
+    $("#18").attr("class", "present")  
+}
+
+//7PM
+var HourAt19 = "19"
+if (now - HourAt19 > 0) {
+    console.log("past")
+    $("#19").attr("class", "past")
+}
+else if(now - HourAt19 < 0) {
+    console.log("future")
+    $("#19").attr("class", "future")
+}
+else {
+    console.log("present")
+    $("#19").attr("class", "present")  
+}
 
 
 //Code to save the tasks with corresponding Save Button
@@ -91,7 +173,6 @@ $(document).ready(function(){
         });
 
   
-
 //10AM
     var taskSaved10 = localStorage.getItem('10AM');
     $("#task10").val(taskSaved10);    
@@ -162,7 +243,7 @@ $("#saveBtn4").click(function(){
     alert(task4);
 });
 
-//4PM
+//5PM
 var taskSaved5 = localStorage.getItem('5PM');
 $("#task5").val(taskSaved5);    
         
@@ -171,8 +252,28 @@ $("#saveBtn5").click(function(){
     var taskSave5 = localStorage.setItem('5PM', task5);
     alert(task5);
 });
+
+//6PM
+var taskSaved6 = localStorage.getItem('6PM');
+$("#task6").val(taskSaved6);    
+        
+$("#saveBtn6").click(function(){
+    var task6 = $("#task6").val();
+    var taskSave6 = localStorage.setItem('6PM', task6);
+    alert(task6);
 });
 
-//Create a new row for each hour of the day
+//7PM
+var taskSaved7 = localStorage.getItem('7PM');
+$("#task7").val(taskSaved7);    
+        
+$("#saveBtn7").click(function(){
+    var task7 = $("#task7").val();
+    var taskSave7 = localStorage.setItem('7PM', task7);
+    alert(task7);
+});
+});
+
+
 
 
